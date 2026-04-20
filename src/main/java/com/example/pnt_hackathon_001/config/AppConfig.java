@@ -1,4 +1,4 @@
-package com.example.hackathon001.configuration;
+package com.example.pnt_hackathon_001.config;
 // package chứa class cấu hình (config) cho toàn bộ Spring
 
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
@@ -32,7 +32,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 // đánh dấu class này là config của Spring
 @EnableWebMvc
 // bật toàn bộ cơ chế Spring MVC
-@ComponentScan("com.example.hackathon001")
+@ComponentScan("com.example.pnt_hackathon_001")
 // Spring sẽ quét toàn bộ package này để tìm Controller, Service, Repository
 
 public class AppConfig {
@@ -43,7 +43,7 @@ public class AppConfig {
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
 
-        templateResolver.setPrefix("/WEB-INF/views");
+        templateResolver.setPrefix("/WEB-INF/views/");
         // đường dẫn tới thư mục chứa file HTML
 
         templateResolver.setSuffix(".html");

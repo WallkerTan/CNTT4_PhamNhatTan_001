@@ -21,6 +21,10 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 dependencies {
+
+    implementation 'org.slf4j:slf4j-simple:2.0.17'
+
+
     // Source: https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
     implementation("org.hibernate.validator:hibernate-validator:8.0.1.Final")
 

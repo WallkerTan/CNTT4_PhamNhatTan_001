@@ -1,18 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Book List</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-
-<form method="get">
-    <input type="search" name="keyword" placeholder="Search...">
-    <button type="submit">Search</button>
-
-    <a th:href="@{/book/add}">Add</a>
-    <table border="1">
+<form action="" method="get">
+    <div>
+        <div>
+            <input type="text" placeholder="Enter book title">
+            <button>Search</button>
+        </div>
+        <button type="submit" th:formaction="@{/book/add}">Add</button>
+    </div>
+    <table>
         <thead>
         <tr>
             <th>STT</th>
@@ -23,28 +24,22 @@
             <th>Actions</th>
         </tr>
         </thead>
-
         <tbody>
         <tr th:each="b : ${books}">
             <td th:text="${b.id}"></td>
             <td th:text="${b.title}"></td>
             <td th:text="${b.author}"></td>
             <td th:text="${b.quantity}"></td>
-
             <td>
-            <img th:src="${b.coverImage}" width="80" alt="Cover">   <!-- ĐÚNG -->
-        </td>
-
+                <img src="" alt="">
+            </td>
             <td>
-                <a th:href="@{/book/update/{id}(id=${b.id})}" class="btn btn-warning">Sửa</a>
-                <a th:href="@{/book/delete/{id}(id=${b.id})}" class="btn btn-danger">Xóa</a>
+                <button type="submit" th:formaction="@{/book/detail/{id}(id=${b.id})}">xem</button>
+                <button type="submit" th:formaction="@{/book/delete/{id}(id=${b.id})}">Xóa</button>
             </td>
         </tr>
-
         </tbody>
     </table>
 </form>
-
-
 </body>
 </html>

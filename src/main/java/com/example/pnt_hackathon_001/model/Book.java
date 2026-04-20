@@ -1,4 +1,4 @@
-package com.example.hackathon001.model;
+package com.example.pnt_hackathon_001.model;
 
 public class Book {
     private long  id;
